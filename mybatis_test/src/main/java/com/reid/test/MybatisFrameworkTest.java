@@ -1,8 +1,8 @@
 package com.reid.test;
 
-import com.reid.dao.IHjzlpjgz;
+import com.reid.dao.IUser;
 
-import com.reid.pojo.THjzlpjgz;
+import com.reid.pojo.User;
 import org.junit.Test;
 import org.reid.mybatis.io.Resources;
 import org.reid.mybatis.sqlsession.SqlSession;
@@ -10,8 +10,6 @@ import org.reid.mybatis.sqlsession.SqlSessionFactory;
 import org.reid.mybatis.sqlsession.SqlSessionFactoryBuilder;
 
 import java.io.InputStream;
-import java.lang.reflect.Method;
-import java.util.List;
 
 /**
  * <p>
@@ -33,21 +31,21 @@ public class MybatisFrameworkTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
         //调用
-        THjzlpjgz hjzlpjgz = new THjzlpjgz();
-        hjzlpjgz.setId("234f06e2dd551699e9044e73d482ccc0");
-        hjzlpjgz.setUserid("1");
-        /*THjzlpjgz th = sqlSession.selectOne("user.findByCondition", hjzlpjgz);
+        User user = new User();
+        user.setId("1331884149004910593");
+        user.setName("张三");
+        /*User th = sqlSession.selectOne("user.findByCondition", user);
         System.out.println(th);
 
-        List<THjzlpjgz> th2 = sqlSession.selectList("user.findAll");
+        List<User> th2 = sqlSession.selectList("user.findAll");
         System.out.println(th2.size());*/
 
-        IHjzlpjgz hjzlpjgz1 = sqlSession.getMapper(IHjzlpjgz.class);
-        /*List<THjzlpjgz> all = hjzlpjgz1.findAll();
+        IUser iUser = sqlSession.getMapper(IUser.class);
+        /*List<User> all = iuser.findAll();
         System.out.println(all.size());*/
-        THjzlpjgz byCondition = hjzlpjgz1.findByCondition(hjzlpjgz);
+        User byCondition = iUser.findByCondition(user);
         System.out.println(byCondition);
-        THjzlpjgz byCondition1 = hjzlpjgz1.gethjzlpj("234f06e2dd551699e9044e73d482ccc0", "1");
+        User byCondition1 = iUser.getUser("1331884149004910593", "张三");
         System.out.println(byCondition1);
     }
 

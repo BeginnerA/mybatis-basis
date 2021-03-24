@@ -1,9 +1,9 @@
 /*
 package com.reid.test;
 
-import com.reid.dao.IHjzlpjgz;
+import com.reid.dao.IUser;
 import com.reid.io.Resources;
-import com.reid.pojo.THjzlpjgz;
+import com.reid.pojo.User;
 import com.reid.sqlSession.DefaultSqlSession;
 import com.reid.sqlSession.SqlSession;
 import com.reid.sqlSession.SqlSessionFactory;
@@ -37,22 +37,22 @@ public class IPersistenceTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
         //调用
-        THjzlpjgz hjzlpjgz = new THjzlpjgz();
-        hjzlpjgz.setId("1f24d6ed42597df85ad7c70f4e05daed");
-        hjzlpjgz.setUserid("1");
+        User user = new User();
+        user.setId("1f24d6ed42597df85ad7c70f4e05daed");
+        user.setName("1");
         */
-/*THjzlpjgz th = sqlSession.selectOne("user.findByCondition", hjzlpjgz);
+        /*User th = sqlSession.selectOne("user.findByCondition", user);
         System.out.println(th);
 
-        List<THjzlpjgz> th2 = sqlSession.selectList("user.findAll");
+        List<User> th2 = sqlSession.selectList("user.findAll");
         System.out.println(th2.size());*//*
 
 
-        IHjzlpjgz hjzlpjgz1 = sqlSession.getMapper(IHjzlpjgz.class);
-        List<THjzlpjgz> all = hjzlpjgz1.findAll();
+        IUser iuser = sqlSession.getMapper(IUser.class);
+        List<User> all = iuser.findAll();
         System.out.println(all.size());
         */
-/*THjzlpjgz byCondition = hjzlpjgz1.findByCondition(hjzlpjgz);
+/*User byCondition = iuser.findByCondition(user);
         System.out.println(byCondition);*//*
 
     }

@@ -11,22 +11,22 @@ package com.reid.pojo;
  * @Version V1.0
  **/
 public class User {
-    private Integer id;
-    private String username;
+    private String id;
+    private String name;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String username) {
+        this.name = username;
     }
 }

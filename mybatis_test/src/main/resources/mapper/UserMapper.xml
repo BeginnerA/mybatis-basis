@@ -1,14 +1,15 @@
-<mapper namespace="com.reid.dao.IHjzlpjgz">
+<mapper namespace="com.reid.dao.IUser">
     <!--sql唯一标识：namespace.id来组成：statementId-->
-    <select id="findAll" resultType="com.reid.pojo.THjzlpjgz">
-        SELECT * FROM `t_hjzlpjgz`;
-    </select>
-    <select id="findByCondition" resultType="com.reid.pojo.THjzlpjgz" parameterType="com.reid.pojo.THjzlpjgz">
-        SELECT * FROM `t_hjzlpjgz` WHERE id = #{id} AND UserID = #{userid};
+    <select id="findAll" resultType="com.reid.pojo.User">
+        SELECT * FROM `test_demo`;
     </select>
 
-    <select id="gethjzlpj" resultType="com.reid.pojo.THjzlpjgz">
-        SELECT * FROM `t_hjzlpjgz` WHERE id = #{id} AND UserID = #{userid};
+    <select id="findByCondition" resultType="com.reid.pojo.User" parameterType="com.reid.pojo.User">
+        SELECT * FROM `test_demo` WHERE id = #{id} AND name = #{name};
+    </select>
+
+    <select id="getUser" resultType="com.reid.pojo.User">
+        SELECT * FROM `test_demo` WHERE id = #{id} AND name = #{name};
     </select>
 
 </mapper>

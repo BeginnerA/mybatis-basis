@@ -1,6 +1,6 @@
 package com.reid.dao;
 
-import com.reid.pojo.THjzlpjgz;
+import com.reid.pojo.User;
 
 import java.util.List;
 
@@ -15,11 +15,11 @@ import java.util.List;
  * @Data 2021/1/26
  * @Version V1.0
  **/
-public interface IHjzlpjgz {
+public interface IUser {
 
-    List<THjzlpjgz> findAll();
+    List<User> findAll();
 
-    THjzlpjgz findByCondition(THjzlpjgz hjzlpjgz);
+    User findByCondition(User user);
 
-    THjzlpjgz gethjzlpj(String id, String userid);
+    User getUser(String id, String name);
 }
